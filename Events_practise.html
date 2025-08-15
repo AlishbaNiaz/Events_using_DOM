@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events using DOM</title>
+    <style>
+    
+    </style>
+</head>
+<body>
+    <h1>ALISHBA</h1>
+    <p id="p"></p>
+     <input type="text" placeholder="Enter your name" id="text">
+
+
+
+
+    <script>
+
+     let btn=document.createElement("button")
+     btn.innerText="Click me!";
+     btn.style.borderColor="white";
+     document.querySelector("body").prepend(btn);
+      
+     btn.addEventListener("click",function(){
+     btn.style.backgroundColor="green";
+     btn.style.color="white";
+
+     });
+
+
+     let inp=document.querySelector("#text");
+     let p=document.querySelector("#p");
+     inp.addEventListener("input",function(){
+     this.value = this.value.replace(/[^a-zA-Z\s]/g, '');
+
+      p.innerText=inp.value;
+     })
+    </script>
+</body>
+</html>
